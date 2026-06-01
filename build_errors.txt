@@ -1,0 +1,15 @@
+src/App.tsx(3,83): error TS2305: Module '"@blinkdotnew/ui"' has no exported member 'SidebarMenu'.
+src/App.tsx(3,96): error TS2724: '"@blinkdotnew/ui"' has no exported member named 'SidebarMenuItem'. Did you mean 'SidebarItem'?
+src/App.tsx(3,113): error TS2305: Module '"@blinkdotnew/ui"' has no exported member 'SidebarMenuButton'.
+src/App.tsx(75,42): error TS2339: Property 'images' does not exist on type 'SearchResponse'.
+src/App.tsx(105,7): error TS2322: Type '{ children: Element; sidebar: Element; }' is not assignable to type 'IntrinsicAttributes & AppShellProps & RefAttributes<HTMLDivElement>'.
+  Property 'sidebar' does not exist on type 'IntrinsicAttributes & AppShellProps & RefAttributes<HTMLDivElement>'.
+src/App.tsx(147,25): error TS2339: Property 'avatar' does not exist on type 'BlinkUser'.
+src/App.tsx(147,49): error TS2339: Property 'avatar' does not exist on type 'BlinkUser'.
+src/blink/client.ts(4,26): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/blink/client.ts(5,31): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/components/IngredientInput.tsx(94,11): error TS2322: Type '"xl"' is not assignable to type '"default" | "sm" | "lg" | "icon"'.
+src/main.ts(1,8): error TS2882: Cannot find module or type declarations for side-effect import of './style.css'.
+src/main.ts(2,28): error TS2307: Cannot find module './assets/typescript.svg' or its corresponding type declarations.
+src/main.ts(3,22): error TS2307: Cannot find module './assets/vite.svg' or its corresponding type declarations.
+src/main.ts(4,21): error TS2307: Cannot find module './assets/hero.png' or its corresponding type declarations.

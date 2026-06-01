@@ -1,0 +1,3 @@
+src/blink/client.ts(4,26): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/blink/client.ts(5,31): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/main.tsx(6,8): error TS2882: Cannot find module or type declarations for side-effect import of './index.css'.

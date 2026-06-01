@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Blink UI Theme CSS
+   REQUIRED for @blinkdotnew/ui components to render correctly.
+   BlinkUIProvider adds .theme-{name} + .dark/.light to <html>,
+   activating the matching CSS variable set below.
+   ───────────────────────────────────────────────────────────────────────────── */
+@import '@blinkdotnew/ui/styles';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Full viewport chain so AppShell / Sidebar h-full + flex-1 SidebarContent work */
+  html {
+    height: 100%;
+  }
+
+  #root {
+    min-height: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body {
+    min-height: 100%;
+    min-height: 100dvh;
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    letter-spacing: var(--tracking-normal);
+  }
+}
+
+/* ── App palette (unlayered, after utilities) ─────────────────────────────────
+   Overrides @blinkdotnew/ui theme colors. @layer base loses specificity to UI themes.
+   Dark mode uses :root.dark + .theme-*.dark to match BlinkUIProvider.
+   ──────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Minimalist Glass Theme */
+  --background: 0 0% 98%;
+  --foreground: 20 14% 4%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 20 14% 4%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14% 4%;
+  
+  --primary: 174 84% 31%; /* Teal */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 263 90% 70%; /* Purple */
+  --secondary-foreground: 0 0% 100%;
+  
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 10% 46%;
+  
+  --accent: 38 92% 50%; /* Amber */
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 174 84% 31%;
+
+  /* Charts */
+  --chart-1: 174 84% 31%;
+  --chart-2: 263 90% 70%;
+  --chart-3: 38 92% 50%;
+  --chart-4: 151 55% 35%;
+  --chart-5: 262 52% 47%;
+
+  /* Sidebar */
+  --sidebar: 0 0% 98%;
+  --sidebar-foreground: 20 14% 4%;
+  --sidebar-primary: 174 84% 31%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 14% 96%;
+  --sidebar-accent-foreground: 174 84% 31%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 174 84% 31%;
+
+  /* Fonts */
+  --font-sans: 'Geist', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Shadows */
+  --shadow-elegant: 0 10px 30px -10px rgba(0,0,0,0.1);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+
+  /* Misc */
+  --tracking-normal: -0.01em;
+  --spacing: 0.25rem;
+  --radius: 1rem;
+}
+
+:root.dark {
+  --background: 220 20% 4%;
+  --foreground: 0 0% 98%;
+  
+  --card: 220 20% 6%;
+  --card-foreground: 0 0% 98%;
+  
+  --popover: 220 20% 6%;
+  --popover-foreground: 0 0% 98%;
+  
+  --primary: 174 84% 45%;
+  --primary-foreground: 0 0% 10%;
+  
+  --secondary: 263 90% 75%;
+  --secondary-foreground: 0 0% 10%;
+  
+  --muted: 220 20% 12%;
+  --muted-foreground: 220 10% 65%;
+  
+  --accent: 38 92% 55%;
+  --accent-foreground: 0 0% 10%;
+  
+  --border: 220 20% 15%;
+  --input: 220 20% 15%;
+  --ring: 174 84% 45%;
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-xl bg-white/40 border border-white/20 shadow-glass dark:bg-black/40 dark:border-white/10;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-md bg-white/60 border border-white/30 shadow-elegant dark:bg-white/5 dark:border-white/10;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
